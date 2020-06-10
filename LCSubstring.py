@@ -83,7 +83,7 @@ from Tree import TreeNode
 def find_LCS_length(s1, s2):
     treeRoot = TreeNode("start")
     answer = find_LCS_length_rec(s1, s2, 0, 0, 0, treeRoot)
-    treeRoot.generateDot()
+    treeRoot.generateDot("LCSubstring")
     return answer
 
 

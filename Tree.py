@@ -14,7 +14,9 @@ class TreeNode:
         self.dot = Digraph()
         self.generateDotRecursive(self, None)
         self.dot.format = 'png'
-        self.dot.render(view=view)
+        if not filename:
+            filename = "images/temp"
+        self.dot.render(filename=f"images/{filename}", view=view)
         
     def generateDotRecursive(self, treeNode, parentNode):
         self.dot.node(str(id(treeNode)), str(treeNode.val) )
